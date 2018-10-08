@@ -14,8 +14,8 @@ class DoubleLinkedList():
         self._tail = None
         self._size = 0
         if collection is not None:
-            for it in collection:
-                self.push_back(it)
+            for _it in collection:
+                self.push_back(_it)
 
     def push_front(self, value):
         """Add value to front"""
@@ -124,8 +124,7 @@ class DoubleLinkedList():
         while current_node is not None:
             if current_node.value == key:
                 return True
-            else:
-                current_node = current_node.next
+            current_node = current_node.next
         return False
 
     def delete(self, key):
@@ -179,13 +178,3 @@ class DoubleLinkedList():
         while i < index:
             current_node = current_node.next
         return current_node.value
-
-
-if __name__ == '__main__':
-    l = DoubleLinkedList()
-    print(l.to_list())
-    l = DoubleLinkedList([1, 2, 3])
-    print(l.to_list())
-    l.delete(1)
-    print(l.size())
-    print(l.to_list())
